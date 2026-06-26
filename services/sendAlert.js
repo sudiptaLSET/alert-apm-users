@@ -2,7 +2,7 @@ import { sendAlertEmail } from "./emailService.js";
 import { sendWhatsAppMessage } from "./whatsappService.js";
 const userList = [
     { name: "Rahul Shaw", number: "8420176164", email: "rahulshaw@lifesciencetrust.com", days: 3 },
-    { name: "Sudipta", number: "7044789194", email: "paul@giimail.com", days: 15 },
+    { name: "Sudipta", number: "7044789194", email: "paulsudipta929@gmail.com", days: 15 },
 ];
 
 export const sendDailyTaskAlert = async () => {

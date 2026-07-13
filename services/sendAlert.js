@@ -17,14 +17,16 @@ export const sendDailyTaskAlert = async () => {
         for (const user of userList) {
             console.log(`Preparing to send alert to ${user.name}...`);
 
-            try {
-                const data = await sendWhatsAppMessage(user);
-                console.log(`✅ WhatsApp sent to ${user.name} (${user.number}). Message ID: ${data.message_id || 'N/A'}`);
-                sent.push({ channel: "whatsapp", name: user.name, number: user.number, message_id: data.message_id || null });
-            } catch (error) {
-                console.error(`❌ WhatsApp failed for ${user.name}:`, error.message);
-                failed.push({ channel: "whatsapp", name: user.name, number: user.number, error: error.message });
-            }
+            // stopped whatsapp messages because funtoo's account is connected for this
+
+            // try {
+            //     const data = await sendWhatsAppMessage(user);
+            //     console.log(`✅ WhatsApp sent to ${user.name} (${user.number}). Message ID: ${data.message_id || 'N/A'}`);
+            //     sent.push({ channel: "whatsapp", name: user.name, number: user.number, message_id: data.message_id || null });
+            // } catch (error) {
+            //     console.error(`❌ WhatsApp failed for ${user.name}:`, error.message);
+            //     failed.push({ channel: "whatsapp", name: user.name, number: user.number, error: error.message });
+            // }
 
             try {
                 await sendAlertEmail(

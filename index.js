@@ -1,6 +1,7 @@
 import express from 'express';
 import "dotenv/config";
 import alertRouter from './routes/alert.js';
+import { getUserList } from './services/getUserList.js';
 
 const app = express();
 const PORT = process.env.PORT;
@@ -16,10 +17,6 @@ app.get('/', (_req, res) => {
   res.send('server is running');
 });
 
-app.get('/getUser',(req,res)=>{
-  console.log("OKOK")
-  res.status(200).json(userList)
-})
 
 app.use('/alert', alertRouter);
 
